@@ -1,0 +1,29 @@
+<h1>Listing targets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Host</th>
+      <th>Path</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @targets.each do |target| %>
+      <tr>
+        <td><%= target.host %></td>
+        <td><%= target.path %></td>
+        <td><%= link_to 'Show', target %></td>
+        <td><%= link_to 'Edit', edit_target_path(target) %></td>
+        <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Target', new_target_path %>
