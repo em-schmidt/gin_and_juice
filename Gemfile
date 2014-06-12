@@ -9,6 +9,15 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'pg', '0.15.1'
 
+
+gem 'devise', '~> 3.0'
+gem 'devise_ldap_authenticatable'
+
+gem 'resque', :require => "resque/server"
+
+gem 'fog'
+
+
 group :development, :test do
     gem 'rspec-rails', '2.13.1'
     gem 'guard-rspec', '2.5.0'

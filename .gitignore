@@ -16,9 +16,11 @@
 /tmp
 
 database.yaml
+fog.yml
 *.swp
 *~
 .project
 .DS_Store
 .idea
 .secret
+ldap.yml
