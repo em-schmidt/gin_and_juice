@@ -10,5 +10,11 @@
   <%= @target.path %>
 </p>
 
+<p>
+  <strong>Queue immediately upon Create/Update:</strong>
+  <%= @target.queue_now? %>
+</p>
+
+
 <%= link_to 'Edit', edit_target_path(@target) %> |
 <%= link_to 'Back', targets_path %>

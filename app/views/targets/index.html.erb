@@ -6,6 +6,7 @@
     <tr>
       <th>Host</th>
       <th>Path</th>
+      <th>Enqueue on save/update</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,6 +18,7 @@
       <tr>
         <td><%= target.host %></td>
         <td><%= target.path %></td>
+        <td><%= target.queue_now? %></td>
         <td><%= link_to 'Show', target %></td>
         <td><%= link_to 'Edit', edit_target_path(target) %></td>
         <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>

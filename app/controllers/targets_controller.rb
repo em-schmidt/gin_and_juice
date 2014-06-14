@@ -69,6 +69,6 @@ class TargetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def target_params
-      params.require(:target).permit(:host, :path)
+      params.require(:target).permit(:host, :path, :queue_now)
     end
 end

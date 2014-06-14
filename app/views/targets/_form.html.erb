@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :host %><br>
+    <%= f.label "hostname (leave blank for local directory)" %><br>
     <%= f.text_field :host %>
   </div>
   <div class="field">
     <%= f.label :path %><br>
     <%= f.text_field :path %>
+  </div>
+  <div class="field">
+    <%= f.label :queue_now %>
+    <%= f.check_box :queue_now %>
   </div>
   <div class="actions">
     <%= f.submit %>
