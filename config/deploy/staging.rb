@@ -8,6 +8,7 @@ role :app, %w{deploy@stage-backup.local}
 role :web, %w{deploy@stage-backup.local}
 role :db,  %w{deploy@stage-backup.local}
 
+set :reails_env, :staging
 
 # Extended Server Syntax
 # ======================
