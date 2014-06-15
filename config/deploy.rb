@@ -64,7 +64,9 @@ set(:symlinks, [
   }
 ])
 
-
+# which config files should be made executable after copying
+# by deploy:setup_config
+set(:executable_config_files, %w())
 
 namespace :deploy do
 
@@ -73,7 +75,7 @@ namespace :deploy do
   # only allow a deploy with passing tests to deployed
   before :deploy, "deploy:run_tests"
   # compile assets locally then rsync
-  # after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
 
   # remove the default nginx configuration as it will tend
