@@ -17,8 +17,11 @@ gem 'resque', :require => "resque/server"
 
 gem 'fog'
 
-gem 'capistrano', '~> 3.2.0'
-
+group :development fo
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+end
 
 group :development, :test do
     gem 'rspec-rails', '2.13.1'
