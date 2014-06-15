@@ -21,7 +21,7 @@ gem 'fog'
 gem 'capistrano', '~> 3.2.0'
 gem 'capistrano-rvm'
 gem 'capistrano-rails'
-gem' capistrano-bundler'
+gem 'capistrano-bundler'
 
 
 group :development, :test do
