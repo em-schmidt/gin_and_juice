@@ -22,8 +22,9 @@ test:
 staging:
   adapter: postgresql
   host: localhost
-  username: eric
-  database: stage-backup  
+  username: stage-backup
+  database: stage-backup
+  password: ulsrgr55b
   
 production:
   adapter: postgresql
