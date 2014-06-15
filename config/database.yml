@@ -19,8 +19,14 @@ test:
   username: eric
   database: ginandjuice-test
   
+staging:
+  adapter: postgresql
+  host: localhost
+  username: eric
+  database: stage-backup  
+  
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: prod-backup
   pool: 5
   timeout: 5000
