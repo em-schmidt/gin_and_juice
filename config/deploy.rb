@@ -56,11 +56,11 @@ set(:config_files, %w(
 set(:symlinks, [
   {
     source: "nginx.conf",
-    link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
+    link: "/etc/nginx/sites-enabled/#{fetch(:application)}"
   },
   {
     source: "log_rotation",
-   link: "/etc/logrotate.d/#{fetch(:full_app_name)}"
+   link: "/etc/logrotate.d/#{fetch(:application)}"
   }
 ])
 
