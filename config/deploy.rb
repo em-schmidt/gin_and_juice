@@ -26,7 +26,7 @@ set :deploy_to, '/usr/local/www/gin_and_juice'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/fog.yml}
+set :linked_files, %w{config/database.yml config/fog.yml config/ldap.yml}
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
