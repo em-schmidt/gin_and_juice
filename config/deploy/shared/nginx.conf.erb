@@ -1,6 +1,10 @@
 server {
-  server_name <%= fetch(:server_name) %>;
   listen 80;
+  listen [::]:80 ipv6only=on;
+
+  server_name <%= fetch(:server_name) %>;
+  passenger_enabled on;
+  rails_env <%= fetch(:rails_env) %>;
   root <%= fetch(:deploy_to) %>/current/public;
 
   location ^~ /assets/ {
@@ -9,23 +13,21 @@ server {
     add_header Cache-Control public;
   }
 
-  try_files $uri/index.html $uri @unicorn;
-  location @unicorn {
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $http_host;
-    proxy_redirect off;
-    proxy_pass http://unicorn;
-  }
-
+  error_page 404 /404.html;
   error_page 500 502 503 504 /500.html;
+
   client_max_body_size 4G;
   keepalive_timeout 10;
 }
 
 <% if fetch(:enable_ssl) %>
 server {
-  server_name <%= fetch(:server_name) %>;
   listen 443;
+  listen [::]:443 ipv6only=on;
+
+  server_name <%= fetch(:server_name) %>;
+  passenger_enabled on;
+  rails_env <%= fetch(:rails_env) %>;
   root <%= fetch(:deploy_to) %>/current/public;
 
   location ^~ /assets/ {
@@ -34,15 +36,7 @@ server {
     add_header Cache-Control public;
   }
 
-  try_files $uri/index.html $uri @unicorn;
-  location @unicorn {
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header   X-Forwarded-Proto https;
-    proxy_set_header Host $http_host;
-    proxy_redirect off;
-    proxy_pass http://unicorn;
-  }
-
+  error_page 404 /404.html;
   error_page 500 502 503 504 /500.html;
   client_max_body_size 4G;
   keepalive_timeout 10;

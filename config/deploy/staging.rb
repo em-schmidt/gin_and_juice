@@ -9,6 +9,8 @@ role :web, %w{deploy@stage-backup.local}
 role :db,  %w{deploy@stage-backup.local}
 
 set :rails_env, :staging
+set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
+set :server_name, "stage-backup.local"
 
 # Extended Server Syntax
 # ======================
@@ -16,7 +18,7 @@ set :rails_env, :staging
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-# server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server 'stage-backup.local', user: 'deploy', roles: %w{web app}
 
 
 # Custom SSH Options
