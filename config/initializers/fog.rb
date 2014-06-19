@@ -4,3 +4,4 @@ FOG = Fog::Storage.new({:provider               => fc["provider"],
                         :aws_secret_access_key  => fc["secret_access_key"]})
 S3 = FOG.directories.get(fc["bucket"])
 BASE_PATH = fc["local_base_path"]
+STAT_CACHE = Redis::Namespace.new(:statcache)
