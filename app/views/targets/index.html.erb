@@ -1,15 +1,15 @@
 <% provide(:title, 'Targets') %>
 <h1>Listing targets</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>Host</th>
       <th>Path</th>
       <th>Enqueue on save/update</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Maximum Cache Age(seconds)</th>
+      <th>Backup Interval (seconds)</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -19,9 +19,11 @@
         <td><%= target.host %></td>
         <td><%= target.path %></td>
         <td><%= target.queue_now? %></td>
-        <td><%= link_to 'Show', target %></td>
-        <td><%= link_to 'Edit', edit_target_path(target) %></td>
-        <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= target.max_cache_age %></td>
+        <td><%= target.backup_interval %></td>
+        <td><%= link_to 'Show', target %>
+        <%= link_to 'Edit', edit_target_path(target) %>
+        <%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

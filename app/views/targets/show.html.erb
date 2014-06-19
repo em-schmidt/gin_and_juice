@@ -11,7 +11,17 @@
 </p>
 
 <p>
-  <strong>Queue immediately upon Create/Update:</strong>
+  <strong>Max cache age:</strong>
+  <%= @target.max_cache_age %>
+</p>
+
+<p> 
+  <strong>Backup Interval</strong>
+  <%= @target.backup_interval %>
+</p>
+
+<p>
+  <strong>Enqueue immediately upon Create/Update:</strong>
   <%= @target.queue_now? %>
 </p>
 

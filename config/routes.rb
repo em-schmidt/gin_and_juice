@@ -1,10 +1,13 @@
 GinAndJuice::Application.routes.draw do
   devise_for :users
-  root "static_pages#home"
+  root "targets#index"
 	match '/help', 		to: 'static_pages#help',		via: 'get'
 	match '/about',		to: 'static_pages#about',		via: 'get'
   match '/contact', to: 'static_pages#contact',	via: 'get'
   resources :targets
+  authenticate :user do
+    mount Resque::Server.new, :at => "/queues"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

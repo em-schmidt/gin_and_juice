@@ -23,7 +23,15 @@
     <%= f.label :queue_now %>
     <%= f.check_box :queue_now %>
   </div>
+  <div class="field">
+    <%= f.label :max_cache_age %>
+    <%= f.text_field :max_cache_age %>
+  </div>
+  <div class="field">
+    <%= f.label :backup_interval %>
+    <%= f.text_field :backup_interval %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Udate Target", class: "btn btn-default btn-primary" %>
   </div>
 <% end %>
