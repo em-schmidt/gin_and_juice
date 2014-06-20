@@ -68,16 +68,6 @@ set(:symlinks, [
 # by deploy:setup_config
 set(:executable_config_files, %w())
 
-def run_remote_rake(rake_cmd)
-  rake_args = ENV['RAKE_ARGS'].to_s.split(',')
- 
-  cmd = "cd #{fetch(:latest_release)} && bundle exec #{fetch(:rake, "rake")} RAILS_ENV=#{fetch(:rails_env, "production")} #{rake_cmd}"
-  cmd += "['#{rake_args.join("','")}']" unless rake_args.empty?
-  run cmd
-  set :rakefile, nil if exists?(:rakefile)
-end
-
-
 
 namespace :deploy do
 
@@ -96,13 +86,6 @@ namespace :deploy do
   # reload nginx to it will pick up any modified vhosts from
   # setup_config
   after 'deploy:setup_config', 'nginx:reload'
-  
-  desc "Restart Resque Workers"
-  task :restart_workers do
-    on roles(:worker) do
-      execute :rake, "resque:restart_workers"
-    end
-  end  
 
   desc 'Restart application'
   task :restart do
@@ -112,7 +95,7 @@ namespace :deploy do
     end
   end
 
-  after :restart, :restart_workers
+  after :restart
 
   after :publishing, :restart
 
