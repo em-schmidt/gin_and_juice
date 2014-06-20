@@ -95,7 +95,6 @@ namespace :deploy do
     end
   end
 
-  after :restart
 
   after :publishing, :restart
 
