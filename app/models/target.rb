@@ -5,7 +5,7 @@ class Target < ActiveRecord::Base
 	
 	def full_path
 	  if self.host.length > 0
-	    "#{BASE_PATH}/#{self.host}#{self.path}"
+	    "#{BACKUP_BASE_PATH}/#{self.host}#{self.path}"
 	 else
 	    self.path
     end
