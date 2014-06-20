@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/sshingler/capistrano-resque.git
+  revision: 94c388e015744dda90fee0c482cc39692f902ec4
+  specs:
+    capistrano-resque (0.1.0)
+      capistrano
+      resque
+      resque-scheduler
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -275,6 +284,7 @@ DEPENDENCIES
   capistrano (~> 3.2.0)
   capistrano-bundler
   capistrano-rails
+  capistrano-resque!
   capistrano-rvm
   capybara (= 2.1.0)
   childprocess (= 0.5.3)
