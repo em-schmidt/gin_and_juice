@@ -97,8 +97,6 @@ namespace :deploy do
   # setup_config
   after 'deploy:setup_config', 'nginx:reload'
   
-  after 'deploy:restart', 'deploy:restart_workers'
-  
   desc "Restart Resque Workers"
   task :restart_workers, :roles => :worker do
     run_remote_rake "resque:restart_workers"
@@ -111,6 +109,8 @@ namespace :deploy do
       execute :touch, release_path.join('tmp/restart.txt')
     end
   end
+
+  after 'deploy:restart', 'deploy:restart_workers'
 
   after :publishing, :restart
 
