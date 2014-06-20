@@ -100,7 +100,7 @@ namespace :deploy do
   desc "Restart Resque Workers"
   task :restart_workers do
     on roles(:worker) do
-      run_remote_rake "resque:restart_workers"
+      execute :rake, "resque:restart_workers"
     end
   end  
 
