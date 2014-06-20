@@ -68,6 +68,8 @@ set(:symlinks, [
 # by deploy:setup_config
 set(:executable_config_files, %w())
 
+after "deploy:restart", "resque:restart"
+
 
 namespace :deploy do
 

@@ -23,6 +23,7 @@ gem 'capistrano', '~> 3.2.0'
 gem 'capistrano-rvm'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
+gem 'capistrano-resque', github: "sshingler/capistrano-resque", require: false
 
 
 group :development, :test do
