@@ -7,6 +7,7 @@
 role :app, %w{deploy@stage-backup.local}
 role :web, %w{deploy@stage-backup.local}
 role :db,  %w{deploy@stage-backup.local}
+role :worker,  %w{deploy@stage-backup.local}
 
 set :rails_env, :staging
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
