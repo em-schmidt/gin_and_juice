@@ -18,6 +18,8 @@ class S3Sender
 
     STAT_CACHE[file_path] = cache_entry.to_json
 
+    Rails.logger.info "S3Sender sent #{file_path} md5: #{digest.to_s} etag: #{aws_file.etag}"
+
 	end
 
 
