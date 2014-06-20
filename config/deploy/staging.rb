@@ -18,7 +18,7 @@ set :server_name, "stage-backup.local"
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'stage-backup.local', user: 'deploy', roles: %w{web app}
+server 'stage-backup.local', user: 'deploy', roles: %w{web app worker}
 
 
 # Custom SSH Options
