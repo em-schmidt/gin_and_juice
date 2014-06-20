@@ -110,7 +110,7 @@ namespace :deploy do
     end
   end
 
-  after 'deploy:restart', 'deploy:restart_workers'
+  after :restart, :restart_workers
 
   after :publishing, :restart
 
