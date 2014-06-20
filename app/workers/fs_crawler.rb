@@ -3,6 +3,7 @@ class FsCrawler
   @queue = :fs_crawler_queue
   
   def self.perform(fs_full_path, max_cache_age)
+    logger.info "Starting crawl of path: #{fs_full_path}"
     Dir.chdir(fs_full_path) do 
       Dir.glob("**/*").map do |path| 
         if File.file?(path)
