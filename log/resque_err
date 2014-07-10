@@ -1,0 +1,48 @@
+rake aborted!
+Redis::CannotConnectError: Error connecting to Redis on 127.0.0.1:6379 (ECONNREFUSED)
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:290:in `rescue in establish_connection'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:285:in `establish_connection'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:79:in `block in connect'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:257:in `with_reconnect'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:78:in `connect'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:304:in `ensure_connected'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:191:in `block in process'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:270:in `logging'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:190:in `process'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:96:in `call'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:784:in `block in get'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:37:in `block in synchronize'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:37:in `synchronize'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:783:in `get'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-namespace-1.4.1/lib/redis/namespace.rb:352:in `method_missing'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:617:in `job'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:546:in `unregister_worker'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:215:in `rescue in work'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:162:in `work'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/tasks.rb:41:in `block (2 levels) in <top (required)>'
+Tasks: TOP => resque:work
+(See full trace by running task with --trace)
+rake aborted!
+Redis::CannotConnectError: Error connecting to Redis on 127.0.0.1:6379 (ECONNREFUSED)
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:290:in `rescue in establish_connection'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:285:in `establish_connection'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:79:in `block in connect'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:257:in `with_reconnect'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:78:in `connect'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:304:in `ensure_connected'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:191:in `block in process'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:270:in `logging'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:190:in `process'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis/client.rb:96:in `call'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:784:in `block in get'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:37:in `block in synchronize'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:37:in `synchronize'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-3.0.7/lib/redis.rb:783:in `get'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/redis-namespace-1.4.1/lib/redis/namespace.rb:352:in `method_missing'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:617:in `job'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:546:in `unregister_worker'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:215:in `rescue in work'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/worker.rb:162:in `work'
+/Users/eric/.rvm/gems/ruby-2.0.0-p481@railstutorial_rails_4_0/gems/resque-1.25.2/lib/resque/tasks.rb:41:in `block (2 levels) in <top (required)>'
+Tasks: TOP => resque:work
+(See full trace by running task with --trace)
