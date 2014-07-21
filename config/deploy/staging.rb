@@ -12,7 +12,7 @@ role :resque_worker, %w{deploy@stage-backup.local}
 role :resque_scheduler, %w{deploy@stage-backup.local}
 
 set :resque_environment_task, true
-set :workers, {"fs_crawler_queue" => 1, "s3_queue" => 9}
+set :workers, {"fs_crawler_queue" => 1, "s3_queue" => 4}
 
 set :rails_env, :staging
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
