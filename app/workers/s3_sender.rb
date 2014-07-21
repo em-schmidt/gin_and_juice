@@ -7,7 +7,7 @@ class S3Sender
 	  digest = Digest::MD5.new()
 	  f.each_line { |line| digest << line }
 	  
-    aws_file = S3.files.create(:key => file_path, :body => open(file_path), :encryption => 'AES256')
+    aws_file = S3.files.create(:key => file_path, :body => open(file_path), :encryption => 'AES256', :multipart_chunk_size => 1048576000)
 	  
 	  cache_entry = {cache_create_time: Time.now.to_i,
 	                 fs_create_time: f.ctime.to_i,
