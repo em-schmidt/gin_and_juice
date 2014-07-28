@@ -14,7 +14,7 @@ gem 'devise', '~> 3.0'
 gem 'devise_ldap_authenticatable'
 
 gem 'resque', :require => "resque/server"
-gem 'resque-scheduler'
+gem 'resque-scheduler', :require => 'resque/scheduler/server'
 
 gem 'fog'
 
