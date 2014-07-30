@@ -15,6 +15,7 @@ gem 'devise_ldap_authenticatable'
 
 gem 'resque', :require => "resque/server"
 gem 'resque-scheduler', :require => 'resque/scheduler/server'
+gem 'resque-lock'
 
 gem 'fog'
 

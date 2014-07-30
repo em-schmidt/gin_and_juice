@@ -24,9 +24,9 @@ class S3Sender
 
             Rails.logger.info "S3Sender sent #{file_path} md5: #{digest.to_s} etag: #{aws_file.etag}"
         rescue Errno::ENOENT => e
-            Rails.logger.error "S3Sender: #{e.message}"
+            Rails.logger.info "S3Sender: #{e.message}"
         rescue Errno::EACCES => e
-            Rails.logger.errror "S3Sender: #{e.message}"
+            Rails.logger.info "S3Sender: #{e.message}"
         end
 
 

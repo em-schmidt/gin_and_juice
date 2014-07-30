@@ -1,6 +1,8 @@
 require 'find'
+require 'resque/plugins/lock'
 
 class FsCrawler
+  extend Resque::Plugins::Lock
 
   @queue = :fs_crawler_queue
   
@@ -24,5 +26,6 @@ class FsCrawler
         end 
       end 
     end 
+    Rails.logger.info "FSCrawler Finished crawl of path: #{fs_full_path}"
   end 
 end 

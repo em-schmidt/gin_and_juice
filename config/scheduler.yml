@@ -1,0 +1,8 @@
+fs_crawl_scheduler:
+    every:
+        - "5m"
+        - :first_in: '120s'
+    class: "CrawlScheduler"
+    queue: scheduler
+    description: "Check for overdue backups and enqueue"
+
