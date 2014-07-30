@@ -1,4 +1,7 @@
+require 'resque/plugins/lock'
+
 class S3Sender
+  extend Resque::Plugins::Lock
 	@queue = :s3_queue
 	
 	def self.perform(file_path)
