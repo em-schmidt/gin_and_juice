@@ -5,7 +5,7 @@ class FsCrawler
   extend Resque::Plugins::Lock
 
   @queue = :fs_crawler_queue
-  
+
   def self.perform(fs_full_path, max_cache_age)
     Rails.logger.info "FSCrawler Starting crawl of path: #{fs_full_path}" 
     Find.find(fs_full_path) do |path| 
@@ -22,10 +22,10 @@ class FsCrawler
             Resque.enqueue(S3Sender, File.expand_path(path))
             else
               Rails.logger.info "FsCrawler path: #{full_path} cache_age: #{Time.now.to_i - cache_create_time} max_cache_age: #{max_cache_age}, skipping"
-          end 
-        end 
-      end 
-    end 
+          end
+        end
+      end
+    end
     Rails.logger.info "FSCrawler Finished crawl of path: #{fs_full_path}"
   end 
 end 
