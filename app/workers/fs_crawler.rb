@@ -7,12 +7,12 @@ class FsCrawler
   @queue = :fs_crawler_queue
 
   def self.perform(fs_full_path, max_cache_age)
-    STAT_CACHE.redis.client.reconnect
+    stat_cache = Redis::Namespace.new(:statcache)
     Rails.logger.info "FSCrawler Starting crawl of path: #{fs_full_path}" 
     Find.find(fs_full_path) do |path| 
       if File.file?(path)
         full_path = File.expand_path(path)
-        cache_entry = STAT_CACHE.get(full_path)
+        cache_entry = stat_cache.get(full_path)
         if cache_entry.nil?
           Rails.logger.info "FsCrawler path: #{full_path} not in stat cache, enqueueing"
           Resque.enqueue(S3Sender, full_path)
