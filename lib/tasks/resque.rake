@@ -1,6 +1,6 @@
 # Resque tasks
 require 'resque/tasks'
-require 'resque_scheduler/tasks'
+require 'resque/scheduler/tasks'
 
 task :scheduler_environment do
   # you probably already have this somewhere
