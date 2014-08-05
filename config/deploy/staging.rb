@@ -12,7 +12,7 @@ role :resque_worker, %w{deploy@stage-backup.local}
 role :resque_scheduler, %w{deploy@stage-backup.local}
 
 set :resque_environment_task, true
-set :workers, {"fs_crawler_queue" => 1, "s3_queue" => 4}
+set :workers, {"fs_crawler_queue" => 1, "scheduler" => 1, "s3_queue" => 4}
 
 set :rails_env, :staging
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
@@ -24,7 +24,7 @@ set :server_name, "stage-backup.local"
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'stage-backup.local', user: 'deploy', roles: %w{web app worker}
+server 'stage-backup.local', user: 'deploy', roles: %w{web app worker resque_scheduler}
 
 
 # Custom SSH Options

@@ -12,7 +12,7 @@ role :resque_worker, %w{deploy@prod-backup.prod1.parature.com}
 role :resque_scheduler, %w{deploy@prod-backup.prod1.parature.com}
 
 set :resque_environment_task, true
-set :workers, {"fs_crawler_queue" => 1, "s3_queue" => 5}
+set :workers, {"fs_crawler_queue" => 1,"scheduler" => 1 "s3_queue" => 5}
 
 
 set :rails_env, :production
