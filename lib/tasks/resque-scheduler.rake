@@ -1,1 +1,0 @@
-require 'resque/scheduler/tasks'
