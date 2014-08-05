@@ -7,6 +7,7 @@ class FsCrawler
   @queue = :fs_crawler_queue
 
   def self.perform(fs_full_path, max_cache_age)
+    STAT_CACHE = Redis::Namespace.new(:statcache)
     Rails.logger.info "FSCrawler Starting crawl of path: #{fs_full_path}" 
     Find.find(fs_full_path) do |path| 
       if File.file?(path)
