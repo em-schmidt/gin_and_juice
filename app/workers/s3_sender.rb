@@ -23,7 +23,7 @@ class S3Sender
                        aws_etag: aws_file.etag,
                        aws_create_time: Time.now.to_i }
 
-            STAT_CACHE = Redis::Namespace.new(:statcache)
+            STAT_CACHE.redis.client.reconnect
             STAT_CACHE[file_path] = cache_entry.to_json
 
             Rails.logger.info "S3Sender sent #{file_path} md5: #{digest.to_s} etag: #{aws_file.etag}"
