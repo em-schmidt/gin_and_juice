@@ -9,11 +9,12 @@ class S3Sender
             f = File.open(file_path, 'r')	  
             digest = Digest::MD5.new()
             f.each_line { |line| digest << line }
+            aws_key = file_path.gsub(/^\//, "")
 
             if f.size > 52428800
-            aws_file = S3.files.create(:key => file_path, :body => open(file_path), :encryption => 'AES256', :multipart_chunk_size => 52428800)
+            aws_file = S3.files.create(:key => aws_key, :body => open(file_path), :encryption => 'AES256', :multipart_chunk_size => 52428800)
             else
-            aws_file = S3.files.create(:key => file_path, :body => open(file_path), :encryption => 'AES256')
+            aws_file = S3.files.create(:key => aws_key, :body => open(file_path), :encryption => 'AES256')
             end
 
             cache_entry = {cache_create_time: Time.now.to_i,
