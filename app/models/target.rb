@@ -8,10 +8,13 @@ class Target < ActiveRecord::Base
 
 	    # NOTE: this was a bit problematic before... didn't have a consistent expectation for which element had slashes and which didnt
 	    #       now we expect all elements to have slashes where needed and don't add any in unexpectedly.  
+	    #
 	    #       for clarity:
 	    #       BACKUP_BASE_PATH should at minimum be "/", if it includes a directory other than root it should have a 
 	    #       trailing slash too. ie "/tmp/"
+	    #
 	    #       host does not have any slashes, ie "localhost"
+	    #
 	    #       path should start with a slash, ie "/file-in-root.txt" or "/directory/file-in-directory.txt"
 	    
 	    # TODO (maybe?):  remove double slashes? 

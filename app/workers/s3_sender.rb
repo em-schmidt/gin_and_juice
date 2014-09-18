@@ -7,6 +7,7 @@ class S3Sender
 	def self.perform(file_path)
         begin
             # TODO: check for cache_entry prior to pushing, if cache_entry exists, compare to s3 object prior to sending
+            # also, if cache entry does not exist, check for s3 object anyway and if s3 object matches local object update/create cache entry.
             stat_cache = Redis::Namespace.new(:statcache)
             cache_entry = stat_cache.get(file_path)
                         
